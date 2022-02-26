@@ -52,9 +52,9 @@ tail(data)
 
 ## :question: Overview of variables:
 
-YYYYMMDD  = Datum (YYYY=jaar MM=maand DD=dag) / Date (YYYY=year MM=month DD=day) \cr
-DDVEC     = Vectorgemiddelde windrichting in graden (360=noord, 90=oost, 180=zuid, 270=west, 0=windstil/variabel). \cr
-FHVEC     = Vectorgemiddelde windsnelheid (in 0.1 m/s). \cr
+YYYYMMDD  = Datum (YYYY=jaar MM=maand DD=dag) / Date (YYYY=year MM=month DD=day) \
+DDVEC     = Vectorgemiddelde windrichting in graden (360=noord, 90=oost, 180=zuid, 270=west, 0=windstil/variabel). \
+FHVEC     = Vectorgemiddelde windsnelheid (in 0.1 m/s). \
 FG        = Etmaalgemiddelde windsnelheid (in 0.1 m/s) / Daily mean windspeed (in 0.1 m/s) \cr
 FHX       = Hoogste uurgemiddelde windsnelheid (in 0.1 m/s) / Maximum hourly mean windspeed (in 0.1 m/s) \cr
 FHXH      = Uurvak waarin FHX is gemeten / Hourly division in which FHX was measured \cr
