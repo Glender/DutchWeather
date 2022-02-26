@@ -36,7 +36,7 @@ Assuming the devtools package is installed correctly, you can install the develo
 # install.packages("devtools")
 devtools::install_github("Glender/DutchWeather", ref="master")
 ```
-## :sunny: :umbrella: :cloud: :eyeglasses: Example
+## :sunny: :umbrella: :cloud: Some examples
 
 Suppose you want to download some daily weahter statistics for research purposes:
 
@@ -56,12 +56,25 @@ plot(
   df$YYYYMMDD, df$TG, 
    type = "l", lty=2, 
    xlab = "Date",  ylab = "Temperature in (0.1) degrees Celsius",
-   main = "Mean Daily Temperature"
+   main = "Daily Mean Temperature"
 )
+
+
+# or plot the daily mean windspeed:
+df <- tail(data, 90)
+
+plot(
+  df$YYYYMMDD, df$FG, 
+   type = "l", lty=2, 
+   xlab = "Date",  ylab = "Daily mean windspeed (in 0.1 m/s)",
+   main = "Daily Mean Windspeed",
+   lwd = 3
+)
+
 
 ```
 
-## :question: Overview of variables:
+## Description of Variables:
 
 YYYYMMDD  = Datum (YYYY=jaar MM=maand DD=dag) / Date (YYYY=year MM=month DD=day) \
 DDVEC     = Vectorgemiddelde windrichting in graden (360=noord, 90=oost, 180=zuid, 270=west, 0=windstil/variabel). \

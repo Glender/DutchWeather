@@ -26,7 +26,7 @@ the development version of DutchWeather with:
 devtools::install_github("Glender/DutchWeather", ref="master")
 ```
 
-## :sunny: :umbrella: :cloud: :eyeglasses: Example
+## :sunny: :umbrella: :cloud: Some examples
 
 Suppose you want to download some daily weahter statistics for research
 purposes:
@@ -61,13 +61,30 @@ plot(
   df$YYYYMMDD, df$TG, 
    type = "l", lty=2, 
    xlab = "Date",  ylab = "Temperature in (0.1) degrees Celsius",
-   main = "Mean Daily Temperature"
+   main = "Daily Mean Temperature"
 )
 ```
 
 <img src="man/figures/README-example-1.png" width="100%" />
 
-## :question: Overview of variables:
+``` r
+
+
+# or plot the daily mean windspeed:
+df <- tail(data, 90)
+
+plot(
+  df$YYYYMMDD, df$FG, 
+   type = "l", lty=2, 
+   xlab = "Date",  ylab = "Daily mean windspeed (in 0.1 m/s)",
+   main = "Daily Mean Windspeed",
+   lwd = 3
+)
+```
+
+<img src="man/figures/README-example-2.png" width="100%" />
+
+## Description of Variables:
 
 YYYYMMDD = Datum (YYYY=jaar MM=maand DD=dag) / Date (YYYY=year MM=month
 DD=day)  
