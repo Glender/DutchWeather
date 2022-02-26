@@ -1,0 +1,61 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# DutchWeather
+
+```{r, echo = FALSE, results='asis'}
+cat(
+	badger::badge_devel("Glender/DutchWeather", "purple"),
+	badger::badge_codefactor("rossellhayes/ipa"),
+	badger::badge_lifecycle("maturing", "blue"),
+	badger::badge_github_actions("rossellhayes/ipa"),
+	badger::badge_codecov("rcannood/princurve"),
+	badger::badge_code_size("Glender/DutchWeather")
+)
+```
+
+The goal of DutchWeather is to provide easy to use functions to download weather statistics from the KNMI website.
+
+## :arrow_double_down: Installation
+
+Assuming the devtools package is installed correctly, you can install the development version of DutchWeather with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("Glender/DutchWeather")
+```
+## :sunny: :umbrella: :cloud: :eyeglasses: Example
+
+Suppose you want to download some daily weahter statistics for research purposes:
+
+```{r example}
+library(DutchWeather)
+## get daily weather data from the KNMI website
+data <- get_daily_zipdata(station_id = 260)
+
+# show bottem rows
+tail(data)
+
+```
+
+## :speech_balloon: Help
+
+The documentation of all functions can be accessed by `?<function-name>` or navigate via the package documentation help page `?DutchDayDummies`.
+```
+# For example:
+?get_daily_zipdata
+```
+
+
