@@ -3,6 +3,8 @@
 
 # DutchWeather: a package for importing KNMI weather data
 
+    #> ✓ Setting active project to '/home/glenn/Documents/Github/DutchWeather'
+
 [![](https://img.shields.io/badge/devel%20version-0.0.0.9000-purple.svg)](https://github.com/Glender/DutchWeather)
 [![CodeFactor](https://www.codefactor.io/repository/github/rossellhayes/ipa/badge)](https://www.codefactor.io/repository/github/rossellhayes/ipa)
 [![](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html#maturing)
@@ -11,8 +13,8 @@ status](https://github.com/rossellhayes/ipa/workflows/R-CMD-check/badge.svg)](ht
 [![](https://codecov.io/gh/rcannood/princurve/branch/master/graph/badge.svg)](https://codecov.io/gh/rcannood/princurve)
 [![](https://img.shields.io/github/languages/code-size/Glender/DutchWeather.svg)](https://github.com/Glender/DutchWeather)
 
-The goal of DutchWeather is to provide easy to use functions to download
-weather statistics from the KNMI website.
+The goal of DutchWeather package is to provide easy to use functions to
+download weather statistics from the KNMI website.
 
 ## :arrow\_double\_down: Installation
 
@@ -26,8 +28,9 @@ devtools::install_github("Glender/DutchWeather", ref="master")
 
 ## :sunny: :umbrella: :cloud: Some examples
 
-Suppose you want to download some daily weahter statistics for research
-purposes:
+Suppose you want to download some daily weather statistics for research
+purposes. You can, for example, plot the results of the daily mean
+temperature:
 
 ``` r
 library(DutchWeather)
@@ -65,10 +68,13 @@ plot(
 
 <img src="man/figures/README-example-1.png" width="100%" />
 
-``` r
+Or you can plot the daily mean windspeed for the last 40 days:
 
+``` r
+library(DutchWeather)
 
 # or plot the daily mean windspeed:
+data <- get_daily_zipdata(station_id = 260)
 df <- tail(data, 40)
 
 plot(
@@ -80,7 +86,10 @@ plot(
 )
 ```
 
-<img src="man/figures/README-example-2.png" width="100%" />
+<img src="man/figures/README-example2-1.png" width="100%" />
+
+Because the packages contains 41 variables, a lot of analyses are
+possible, see a description of the variables down below.
 
 ## Description of Variables:
 
@@ -171,7 +180,7 @@ evapotranspiration (Makkink) (in 0.1 mm)
 ## :speech\_balloon: Help
 
 The documentation of all functions can be accessed by `?<function-name>`
-or navigate via the package documentation help page `?DutchDayDummies`.
+or navigate via the package documentation help page `?DutchWeather`.
 
     # For example:
     ?get_daily_zipdata

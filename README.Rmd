@@ -26,7 +26,7 @@ cat(
 )
 ```
 
-The goal of DutchWeather is to provide easy to use functions to download weather statistics from the KNMI website.
+The goal of DutchWeather package is to provide easy to use functions to download weather statistics from the KNMI website.
 
 ## :arrow_double_down: Installation
 
@@ -38,7 +38,8 @@ devtools::install_github("Glender/DutchWeather", ref="master")
 ```
 ## :sunny: :umbrella: :cloud: Some examples
 
-Suppose you want to download some daily weahter statistics for research purposes:
+Suppose you want to download some daily weather statistics for research purposes.
+You can, for example, plot the results of the daily mean temperature:
 
 ```{r example}
 library(DutchWeather)
@@ -58,9 +59,15 @@ plot(
    xlab = "Date",  ylab = "Temperature in (0.1) degrees Celsius",
    main = "Daily Mean Temperature"
 )
+```
 
+Or you can plot the daily mean windspeed for the last 40 days:
+
+```{r, example2}
+library(DutchWeather)
 
 # or plot the daily mean windspeed:
+data <- get_daily_zipdata(station_id = 260)
 df <- tail(data, 40)
 
 plot(
@@ -70,9 +77,9 @@ plot(
    main = "Daily Mean Windspeed",
    lwd = 2
 )
-
-
 ```
+
+Because the packages contains 41 variables, a lot of analyses are possible, see a description of the variables down below. 
 
 ## Description of Variables:
 
@@ -119,7 +126,7 @@ EV24      = Referentiegewasverdamping (Makkink) (in 0.1 mm) / Potential evapotra
 
 ## :speech_balloon: Help
 
-The documentation of all functions can be accessed by `?<function-name>` or navigate via the package documentation help page `?DutchDayDummies`.
+The documentation of all functions can be accessed by `?<function-name>` or navigate via the package documentation help page `?DutchWeather`.
 ```
 # For example:
 ?get_daily_zipdata
