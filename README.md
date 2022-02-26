@@ -1,7 +1,9 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# DutchWeather: a pacakge for importing KNMI weather data
+# DutchWeather: a package for importing KNMI weather data
+
+    #> ✓ Setting active project to '/home/glenn/Documents/Github/DutchWeather'
 
 [![](https://img.shields.io/badge/devel%20version-0.0.0.9000-purple.svg)](https://github.com/Glender/DutchWeather)
 [![CodeFactor](https://www.codefactor.io/repository/github/rossellhayes/ipa/badge)](https://www.codefactor.io/repository/github/rossellhayes/ipa)
