@@ -48,6 +48,17 @@ data <- get_daily_zipdata(station_id = 260)
 # show bottem rows
 tail(data)
 
+
+# and plot some results
+df <- tail(data, 4000)
+
+plot(
+  df$YYYYMMDD, df$TG, 
+   type = "l", lty=2, 
+   xlab = "Date",  ylab = "Temperature in (0.1) degrees Celsius",
+   main = "Mean Daily Temperature"
+)
+
 ```
 
 ## :question: Overview of variables:

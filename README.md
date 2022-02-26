@@ -52,7 +52,20 @@ tail(data)
 #> #   RHX <int>, RHXH <int>, PG <int>, PX <int>, PXH <int>, PN <int>, PNH <int>,
 #> #   VVN <int>, VVNH <int>, VVX <int>, VVXH <int>, NG <int>, UG <int>, UX <int>,
 #> #   UXH <int>, UN <int>, UNH <int>, EV24 <int>
+
+
+# and plot some results
+df <- tail(data, 4000)
+
+plot(
+  df$YYYYMMDD, df$TG, 
+   type = "l", lty=2, 
+   xlab = "Date",  ylab = "Temperature in (0.1) degrees Celsius",
+   main = "Mean Daily Temperature"
+)
 ```
+
+<img src="man/figures/README-example-1.png" width="100%" />
 
 ## :question: Overview of variables:
 
