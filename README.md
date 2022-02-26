@@ -71,14 +71,14 @@ plot(
 
 
 # or plot the daily mean windspeed:
-df <- tail(data, 80)
+df <- tail(data, 40)
 
 plot(
   df$YYYYMMDD, df$FG, 
    type = "l", lty=2, 
-   xlab = "Date",  ylab = "Daily mean windspeed (in 0.1 m/s)",
+   xlab = "Date",  ylab = "Daily Mean Windspeed (in 0.1 m/s)",
    main = "Daily Mean Windspeed",
-   lwd = 3
+   lwd = 2
 )
 ```
 
