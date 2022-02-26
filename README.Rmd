@@ -61,7 +61,7 @@ plot(
 
 
 # or plot the daily mean windspeed:
-df <- tail(data, 90)
+df <- tail(data, 80)
 
 plot(
   df$YYYYMMDD, df$FG, 
