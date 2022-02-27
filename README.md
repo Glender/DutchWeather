@@ -3,6 +3,8 @@
 
 # DutchWeather: a package for importing KNMI weather data
 
+    #> ✓ Setting active project to '/home/glenn/Documents/Github/DutchWeather'
+
 [![](https://img.shields.io/badge/devel%20version-0.0.0.9000-purple.svg)](https://github.com/Glender/DutchWeather)
 [![CodeFactor](https://www.codefactor.io/repository/github/rossellhayes/ipa/badge)](https://www.codefactor.io/repository/github/rossellhayes/ipa)
 [![](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html#maturing)
@@ -70,9 +72,7 @@ Similarly, we can plot the daily precipitation for the last 30 years:
 
 ``` r
 
-
-library(DutchWeather)
-data <- get_daily_zipdata()
+# get data of the last 10.000 days
 df <- tail(data, 10000)
 
 plot(
@@ -89,10 +89,8 @@ plot(
 Or you can plot the daily mean windspeed for the last 40 days:
 
 ``` r
-library(DutchWeather)
 
-# or plot the daily mean windspeed:
-data <- get_daily_zipdata(station_id = 260)
+# get data of the last 40 days
 df <- tail(data, 40)
 
 plot(

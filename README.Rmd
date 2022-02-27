@@ -65,9 +65,7 @@ Similarly, we can plot the daily precipitation for the last 30 years:
 
 ```{r, example2}
 
-
-library(DutchWeather)
-data <- get_daily_zipdata()
+# get data of the last 10.000 days
 df <- tail(data, 10000)
 
 plot(
@@ -84,10 +82,8 @@ plot(
 Or you can plot the daily mean windspeed for the last 40 days:
 
 ```{r, example3}
-library(DutchWeather)
 
-# or plot the daily mean windspeed:
-data <- get_daily_zipdata(station_id = 260)
+# get data of the last 40 days
 df <- tail(data, 40)
 
 plot(
