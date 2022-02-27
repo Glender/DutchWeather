@@ -11,5 +11,6 @@ from the KNMI website.
 \section{KNMI daily weather data}{
 
 \code{\link[DutchWeather]{get_daily_zipdata}} \cr
+\code{\link[DutchWeather]{get_hourly_zipdata}} \cr
 }
 
