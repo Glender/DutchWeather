@@ -42,12 +42,12 @@ tail(data)
 #> # A tibble: 6 x 41
 #>   `# STN` YYYYMMDD   DDVEC FHVEC    FG   FHX  FHXH   FHN  FHNH   FXX  FXXH    TG
 #>     <int> <date>     <int> <int> <int> <int> <int> <int> <int> <int> <int> <int>
-#> 1     260 2022-02-20   230    73    80   120    20    30     3   230    20    82
-#> 2     260 2022-02-21   275    67    75   100    13    40    22   200     9    65
-#> 3     260 2022-02-22   246    41    47    70    13    30     2   140    17    71
-#> 4     260 2022-02-23   221    44    47    70    13    20     8   140    15    80
-#> 5     260 2022-02-24   226    47    57    90    12    30    20   170    12    62
-#> 6     260 2022-02-25   266    35    40    60     5    10    21   140    11    47
+#> 1     260 2022-02-21   275    67    75   100    13    40    22   200     9    65
+#> 2     260 2022-02-22   246    41    47    70    13    30     2   140    17    71
+#> 3     260 2022-02-23   221    44    47    70    13    20     8   140    15    80
+#> 4     260 2022-02-24   226    47    57    90    12    30    20   170    12    62
+#> 5     260 2022-02-25   266    35    40    60     5    10    21   140    11    47
+#> 6     260 2022-02-26   133    19    23    40    14    10     1    70    14    22
 #> # … with 29 more variables: TN <int>, TNH <int>, TX <int>, TXH <int>,
 #> #   T10N <int>, T10NH <int>, SQ <int>, SP <int>, Q <int>, DR <int>, RH <int>,
 #> #   RHX <int>, RHXH <int>, PG <int>, PX <int>, PXH <int>, PN <int>, PNH <int>,
@@ -68,6 +68,26 @@ plot(
 
 <img src="man/figures/README-example-1.png" width="100%" />
 
+Similarly, we can plot the daily precipitation for the last 30 years:
+
+``` r
+
+
+library(DutchWeather)
+data <- get_daily_zipdata()
+df <- tail(data, 10000)
+
+plot(
+  df$YYYYMMDD, df$RH,
+  type = "l",
+  main = " Daily Precipitation in Holland, De Bilt, 1995 - 2022",
+  xlab = "Year",
+  ylab = " Daily Precipitation amount (in 0.1 mm)",
+)
+```
+
+<img src="man/figures/README-example2-1.png" width="100%" />
+
 Or you can plot the daily mean windspeed for the last 40 days:
 
 ``` r
@@ -86,7 +106,7 @@ plot(
 )
 ```
 
-<img src="man/figures/README-example2-1.png" width="100%" />
+<img src="man/figures/README-example3-1.png" width="100%" />
 
 Because the packages contains 41 variables, a lot of analyses are
 possible, see a description of the variables down below.

@@ -61,9 +61,29 @@ plot(
 )
 ```
 
-Or you can plot the daily mean windspeed for the last 40 days:
+Similarly, we can plot the daily precipitation for the last 30 years: 
 
 ```{r, example2}
+
+
+library(DutchWeather)
+data <- get_daily_zipdata()
+df <- tail(data, 10000)
+
+plot(
+  df$YYYYMMDD, df$RH,
+  type = "l",
+  main = " Daily Precipitation in Holland, De Bilt, 1995 - 2022",
+  xlab = "Year",
+  ylab = " Daily Precipitation amount (in 0.1 mm)",
+)
+
+
+```
+
+Or you can plot the daily mean windspeed for the last 40 days:
+
+```{r, example3}
 library(DutchWeather)
 
 # or plot the daily mean windspeed:
