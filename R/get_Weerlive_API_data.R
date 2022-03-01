@@ -8,7 +8,6 @@
 #'
 #' @return
 #' @export
-#' #get_Weerlive_API_data(key="######", locatie="Amsterdam")
 get_Weerlive_API_data <- function(
   key,
   locatie="Amsterdam",
